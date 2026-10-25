@@ -1,0 +1,42 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "GT Not Hard: Singularity NEI",
+      "desc:8": "§bGT Not Hard: Singularity NEI§r\n\nYour GT Not Hard edit: the Singularity's void outputs in NEI used to be 55 tabs (5 modes x 11 tiers). Now there is one tab per mode - Void Ore, Ingot, Gem, Dust and Fluid - and each planet is its own page, labelled \"Void <Mode> Mode: <Planet> (T<n>)\", in planet order.\n\n§cRebalanced§r: Chaos, Origin and Singularity are now huge late-game towers unlocked with Alien Artifacts (space dungeon chests) and Ancient Books (dragon drops). See Chapter 1 and the Mod Guide.\n\n§aTask§r: tick the box once you've read this.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 25567,
+        "OreDict:8": "",
+        "id:8": "gregtech:gt.blockmachines"
+      }
+    }
+  },
+  "questIDHigh:4": 7946224640136598423,
+  "questIDLow:4": -4756432747388583974,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -3513009521147422708,
+      "questIDLow:4": -5285312606347340264
+    }
+  }
+}

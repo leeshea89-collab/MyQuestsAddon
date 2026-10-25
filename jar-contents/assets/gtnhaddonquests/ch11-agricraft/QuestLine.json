@@ -1,0 +1,19 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "bg_image:8": "",
+      "bg_size:3": 256,
+      "desc:8": "AgriCraft: crossbreed plants on crop sticks, raise their growth, gain and strength, and breed your way to resource crops.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "AgriCraft:seedAnalyzer"
+      },
+      "name:8": "Chapter 11: AgriCraft",
+      "visibility:8": "NORMAL"
+    }
+  },
+  "questLineIDHigh:4": -8828544136446258781,
+  "questLineIDLow:4": -7282086490042636714
+}

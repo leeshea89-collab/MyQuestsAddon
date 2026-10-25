@@ -1,0 +1,107 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Void Miner (IV)",
+      "desc:8": "§bVoid Miner (IV)§r\n\nCraft it from the EV Void Miner, an IV hull, 2 Tungstensteel plates, an IV motor, piston, pump and robot arm, and an IV circuit. It reaches planets up to §bT10§r.\n\n§6Planets§r: put a planet block in the controller slot to mine that planet. Sneak + screwdriver switches between §eOre§r mode and §eSurface§r mode (the planet's stone and topsoil).\n\n§aTask§r: have one in your inventory. It is not consumed.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 31768,
+        "OreDict:8": "",
+        "id:8": "gregtech:gt.blockmachines"
+      }
+    }
+  },
+  "questIDHigh:4": -1579391065248605417,
+  "questIDLow:4": -7253131145931276441,
+  "rewards:9": {
+    "0:10": {
+      "index:3": 0,
+      "ignoreDisabled:1": 0,
+      "rewardID:8": "bq_standard:item",
+      "rewards:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 8,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        },
+        "1:10": {
+          "Count:3": 1,
+          "Damage:2": 23,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        },
+        "2:10": {
+          "Count:3": 1,
+          "Damage:2": 110,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        }
+      }
+    },
+    "1:10": {
+      "index:3": 1,
+      "ignoreDisabled:1": 0,
+      "rewardID:8": "bq_standard:choice",
+      "choices:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 105,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        },
+        "1:10": {
+          "Count:3": 2,
+          "Damage:2": 0,
+          "OreDict:8": "",
+          "id:8": "dreamcraft:CoinSpaceII"
+        },
+        "2:10": {
+          "Count:3": 1,
+          "Damage:2": 100,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        }
+      }
+    }
+  },
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:retrieval",
+      "autoConsume:1": 0,
+      "consume:1": 0,
+      "groupDetect:1": 0,
+      "ignoreNBT:1": 1,
+      "partialMatch:1": 0,
+      "requireOnlyOneItem:1": 0,
+      "requiredItems:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 31768,
+          "OreDict:8": "",
+          "id:8": "gregtech:gt.blockmachines"
+        }
+      }
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -6702223429080033559,
+      "questIDLow:4": -5505583791363169096
+    }
+  }
+}

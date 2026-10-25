@@ -1,0 +1,42 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "GTNH Planner",
+      "desc:8": "§bGTNH Planner§r\n\nExports your recipes and quest progress to your private GitHub data repo, so Claude can plan production lines with what you have actually unlocked.\n\n§eUse§r: /planner sync (or the Home key) after progress; /planner recipes after pack updates. It also syncs by itself shortly after quest changes.\n§eSetup§r: token in config/gtnhplanner/token.txt.\n\n§aTask§r: tick the box once you've read this.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "minecraft:map"
+      }
+    }
+  },
+  "questIDHigh:4": -548920386789288959,
+  "questIDLow:4": -7751455106838046383,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -3513009521147422708,
+      "questIDLow:4": -5285312606347340264
+    }
+  }
+}

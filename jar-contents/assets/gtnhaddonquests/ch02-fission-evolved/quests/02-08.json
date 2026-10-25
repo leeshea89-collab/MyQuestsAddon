@@ -1,0 +1,70 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Eternal Entropy Ember Fuel Rod",
+      "desc:8": "§bEternal Entropy Ember Fuel Rod§r\n\nThe first ultimate fuel, researched from Tiberium Cataclysm and made in a UIV Assembly Line. In the Ultimate Universe-Destroying Generator one rod is rated 10^30 EU/t before multipliers.\n\nUse NEI (R on the item) for the exact recipe in your installed Fission-Evolved version.\n\n§aTask§r: have one in your inventory. It is not consumed.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "fissionevolved:gt.fissionevolved.eternal_entropy_ember_fuel_rod"
+      }
+    }
+  },
+  "questIDHigh:4": 5470722908836156491,
+  "questIDLow:4": -6748176009199343858,
+  "rewards:9": {
+    "0:10": {
+      "index:3": 0,
+      "ignoreDisabled:1": 0,
+      "rewardID:8": "bq_standard:item",
+      "rewards:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 44,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        }
+      }
+    }
+  },
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:retrieval",
+      "autoConsume:1": 0,
+      "consume:1": 0,
+      "groupDetect:1": 0,
+      "ignoreNBT:1": 1,
+      "partialMatch:1": 0,
+      "requireOnlyOneItem:1": 0,
+      "requiredItems:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 0,
+          "OreDict:8": "",
+          "id:8": "fissionevolved:gt.fissionevolved.eternal_entropy_ember_fuel_rod"
+        }
+      }
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": 2432666484928894359,
+      "questIDLow:4": -8997598169434523519
+    }
+  }
+}

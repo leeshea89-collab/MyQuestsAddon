@@ -1,0 +1,56 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Singularity",
+      "desc:8": "§bSingularity§r\n\nGT Not Hard's resource generator. Its void modes turn a planet block into that planet's ores, ingots, gems, dusts or fluids; Chaos and Origin are its partner machines.\n\n§cRebalanced§r: needs a Singularity Module, a coil core of Trinium or better, power and UU-Matter. Made in the Assembly Line.\n\n§aTask§r: have one in your inventory. It is not consumed.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 25567,
+        "OreDict:8": "",
+        "id:8": "gregtech:gt.blockmachines"
+      }
+    }
+  },
+  "questIDHigh:4": 9036783498349074334,
+  "questIDLow:4": -4820408203345454467,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:retrieval",
+      "autoConsume:1": 0,
+      "consume:1": 0,
+      "groupDetect:1": 0,
+      "ignoreNBT:1": 1,
+      "partialMatch:1": 0,
+      "requireOnlyOneItem:1": 0,
+      "requiredItems:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 25567,
+          "OreDict:8": "",
+          "id:8": "gregtech:gt.blockmachines"
+        }
+      }
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": 7946224640136598423,
+      "questIDLow:4": -4756432747388583974
+    }
+  }
+}

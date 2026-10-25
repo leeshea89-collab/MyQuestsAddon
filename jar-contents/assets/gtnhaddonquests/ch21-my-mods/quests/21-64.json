@@ -1,0 +1,56 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Maintaining Input Hatch (ME)",
+      "desc:8": "§bMaintaining Input Hatch (ME)§r\n\nA Crafting Input Buffer that keeps stock: 9 pattern slots, each with a target amount. When the network drops below it, the hatch starts the craft itself. Toggle \"craft missing ingredients\" to have AE2 make the sub-parts too. Super Patterns count as one entry.\n\nRecipe: Crafting Input Buffer (ME) + ME Level Maintainer.\n\n§cRebalanced§r: now tiered: IV 3 slots, LuV 5, ZPM 7, UV 9. Made in the Assembler.\n\n§aTask§r: have one in your inventory. It is not consumed.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 26110,
+        "OreDict:8": "",
+        "id:8": "gregtech:gt.blockmachines"
+      }
+    }
+  },
+  "questIDHigh:4": 2616613619559652267,
+  "questIDLow:4": -5204439220254977665,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:retrieval",
+      "autoConsume:1": 0,
+      "consume:1": 0,
+      "groupDetect:1": 0,
+      "ignoreNBT:1": 1,
+      "partialMatch:1": 0,
+      "requireOnlyOneItem:1": 0,
+      "requiredItems:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 26110,
+          "OreDict:8": "",
+          "id:8": "gregtech:gt.blockmachines"
+        }
+      }
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": 7862019140011512166,
+      "questIDLow:4": -7991063138185523822
+    }
+  }
+}

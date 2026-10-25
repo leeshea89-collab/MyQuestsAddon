@@ -1,0 +1,64 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Breeding Greenhouse",
+      "desc:8": "§bBreeding Greenhouse§r\n\nGrows seeds in three modes. Harvest uses Distilled Water and MineFactory Sewage, Pollination uses Gendustry Mutagen, Growth is slow and uses fertilizer. It needs an input hatch for its fluids. Change mode with a screwdriver.\n\n§aTask§r: have one in your inventory. It is not consumed.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 17400,
+        "OreDict:8": "",
+        "id:8": "gregtech:gt.blockmachines"
+      }
+    }
+  },
+  "questIDHigh:4": 6514600939123986643,
+  "questIDLow:4": -7710858251969315216,
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:retrieval",
+      "autoConsume:1": 0,
+      "consume:1": 0,
+      "groupDetect:1": 0,
+      "ignoreNBT:1": 1,
+      "partialMatch:1": 0,
+      "requireOnlyOneItem:1": 0,
+      "requiredItems:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 17400,
+          "OreDict:8": "",
+          "id:8": "gregtech:gt.blockmachines"
+        }
+      }
+    }
+  },
+  "rewards:9": {
+    "0:10": {
+      "index:3": 0,
+      "ignoreDisabled:1": 0,
+      "rewardID:8": "bq_standard:item",
+      "rewards:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 4,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        }
+      }
+    }
+  }
+}

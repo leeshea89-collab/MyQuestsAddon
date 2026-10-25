@@ -1,0 +1,13 @@
+GTNH Scripts - quest reward disk
+Run "install" with this disk inserted to copy the programs to your computer.
+
+power [s]                      live GT battery buffer / LSC monitor
+powerctl <side> [low] [high]   redstone generator control with hysteresis
+lscalarm [warn%]               low-power warning in chat (Computronics Chat Box)
+stock                          AE2 stock keeper (edit /home/stock.cfg)
+aetop [n]                      top items in your ME network
+geoscan [r] [hardness]         geolyzer ore finder
+sorter <in> <default> [pat=side ...]   transposer item sorter
+pulse <side> [interval] [len]  redstone clock
+holoplanet [radius]            draw a planet with a hologram projector
+treefarm [cycles]              robot tree farm (run on a robot)

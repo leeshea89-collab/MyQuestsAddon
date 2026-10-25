@@ -1,0 +1,42 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "NEI Bookmarks",
+      "desc:8": "§bNEI Bookmarks§r\n\n\"Bookmark in NEI\" puts a quest's items, with the amounts it needs, into your NEI bookmarks as their own group - click one for its recipe and craft it. The button is on the quest screen and on the panel above your inventory; you can also bind a key for it.\n\n§aTask§r: tick the box once you've read this.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "minecraft:book"
+      }
+    }
+  },
+  "questIDHigh:4": -5599430929699940860,
+  "questIDLow:4": -5867637004668073484,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -1297099876007716758,
+      "questIDLow:4": -4903818697916376772
+    }
+  }
+}

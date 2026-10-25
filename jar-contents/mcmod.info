@@ -1,0 +1,15 @@
+[
+  {
+    "modid": "gtnhaddonquests",
+    "name": "GTNH Addon Quests",
+    "description": "Addon quest chapters for Better Questing: 21 chapters, 592 quests. 9.1.0: rebalanced rewards, GT-Not-Hard research path, Breeding Greenhouse and Soul Crusher quests in Chapter 1. Player progress is kept.",
+    "version": "9.1.0",
+    "mcversion": "1.7.10",
+    "authorList": [
+      "GTNH addon questbook project"
+    ],
+    "dependencies": [
+      "betterquesting"
+    ]
+  }
+]

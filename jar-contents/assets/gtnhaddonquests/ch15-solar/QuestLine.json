@@ -1,0 +1,19 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "bg_image:8": "",
+      "bg_size:3": 256,
+      "desc:8": "Solar Flux and Super Solar Panel: tiered RF solar panels, photovoltaic cells, upgrades, and the spectral to photonic panels.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "SolarFlux:solar1"
+      },
+      "name:8": "Chapter 15: Solar Power",
+      "visibility:8": "NORMAL"
+    }
+  },
+  "questLineIDHigh:4": -6467269774237870721,
+  "questLineIDLow:4": -6942488386150556683
+}

@@ -1,0 +1,19 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "bg_image:8": "",
+      "bg_size:3": 256,
+      "desc:8": "Fission-Evolved: the 7x7x7 Large Fission Reactor, nine custom fuel rods and the 48x48x32 Ultimate Universe-Destroying Generator.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 32100,
+        "OreDict:8": "",
+        "id:8": "gregtech:gt.blockmachines"
+      },
+      "name:8": "Chapter 2: Fission-Evolved",
+      "visibility:8": "NORMAL"
+    }
+  },
+  "questLineIDHigh:4": 7945501257081773441,
+  "questLineIDLow:4": -7192866548821775170
+}

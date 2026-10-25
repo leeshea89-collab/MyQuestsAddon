@@ -1,0 +1,42 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Objective Panel",
+      "desc:8": "§bObjective Panel§r\n\nAn on-screen panel showing your current quest: its items with live counts (3/16), planets to visit, and \"Ready! Open the quest book to claim\" when it's done. It follows the last quest you opened in the quest book (any chapter), and also shows above your inventory with a \"Bookmark in NEI\" button.\n\n§eKeys§r (Controls > GTNH Addon Quests): \\ show/hide, Shift+\\ move it, [ and ] switch quest, plus optional keys for automatic mode and NEI bookmarks.\n§eSettings§r: config/gtnhaddonquests/hud.cfg (anchor, offsets, scale, inventoryPanel).\n\n§aTask§r: tick the box once you've read this.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "minecraft:compass"
+      }
+    }
+  },
+  "questIDHigh:4": -4011739424933718147,
+  "questIDLow:4": -7964844056450705317,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -1297099876007716758,
+      "questIDLow:4": -4903818697916376772
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Mehen Belt",
+      "desc:8": "§bMehen Belt§r\n\nAmun-Ra's asteroid belt.\n\n§bTier 9§r planet. Visit the Mehen Belt. It is a Tier 9 destination, so bring a rocket that can reach it.\n\nReward: the §eMehen Belt planet block§r. Put it in a Void Miner (IV or better) controller slot to mine Mehen Belt from home, in Ore or Surface mode.\n\n§aTask§r: set foot in that dimension. The quest completes on arrival.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "gtneioreplugin:blockDimensionDisplay_MB"
+      }
+    }
+  },
+  "questIDHigh:4": 6485913548012279440,
+  "questIDLow:4": -5848445874950174160,
+  "rewards:9": {
+    "0:10": {
+      "index:3": 0,
+      "ignoreDisabled:1": 0,
+      "rewardID:8": "bq_standard:item",
+      "rewards:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 0,
+          "OreDict:8": "",
+          "id:8": "gtneioreplugin:blockDimensionDisplay_MB"
+        },
+        "1:10": {
+          "Count:3": 1,
+          "Damage:2": 44,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        }
+      }
+    }
+  },
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:location",
+      "name:8": "Mehen Belt",
+      "dimension:3": 95,
+      "posX:3": 0,
+      "posY:3": 64,
+      "posZ:3": 0,
+      "range:3": -1,
+      "biome:3": -1,
+      "structure:8": "",
+      "visible:1": 0,
+      "hideInfo:1": 0,
+      "invert:1": 0,
+      "taxiCabDist:1": 0
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -1579391065248605417,
+      "questIDLow:4": -7253131145931276441,
+      "type:1": 2
+    }
+  }
+}

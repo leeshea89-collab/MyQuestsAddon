@@ -1,0 +1,75 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Mercury",
+      "desc:8": "§bMercury§r\n\nScorched by the sun.\n\n§bTier 4§r planet. Visit Mercury. It is a Tier 4 destination, so bring a rocket that can reach it.\n\nReward: the §eMercury planet block§r. Put it in a Void Miner (MV or better) controller slot to mine Mercury from home, in Ore or Surface mode.\n\n§aTask§r: set foot in that dimension. The quest completes on arrival.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "gtneioreplugin:blockDimensionDisplay_Me"
+      }
+    }
+  },
+  "questIDHigh:4": 2586064439363458087,
+  "questIDLow:4": -4741816424932411105,
+  "rewards:9": {
+    "0:10": {
+      "index:3": 0,
+      "ignoreDisabled:1": 0,
+      "rewardID:8": "bq_standard:item",
+      "rewards:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 0,
+          "OreDict:8": "",
+          "id:8": "gtneioreplugin:blockDimensionDisplay_Me"
+        },
+        "1:10": {
+          "Count:3": 1,
+          "Damage:2": 8,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        }
+      }
+    }
+  },
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:location",
+      "name:8": "Mercury",
+      "dimension:3": 37,
+      "posX:3": 0,
+      "posY:3": 64,
+      "posZ:3": 0,
+      "range:3": -1,
+      "biome:3": -1,
+      "structure:8": "",
+      "visible:1": 0,
+      "hideInfo:1": 0,
+      "invert:1": 0,
+      "taxiCabDist:1": 0
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": 6030266092261759099,
+      "questIDLow:4": -9188933907860910310,
+      "type:1": 2
+    }
+  }
+}

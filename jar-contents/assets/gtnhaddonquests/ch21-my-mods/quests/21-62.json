@@ -1,0 +1,56 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Super Pattern Terminal",
+      "desc:8": "§bSuper Pattern Terminal§r\n\nThe handheld encoder: name, NEI search, machine grid, tier slider and a live preview. Recipe: glowstone, blank pattern, glowstone / blank pattern, AE2 Pattern Terminal, blank pattern / glowstone, blank pattern, glowstone.\n\n§cRebalanced§r: made in the Assembler with HV parts. Its tier slider stops at the best blank you carry.\n\n§aTask§r: have one in your inventory. It is not consumed.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "superpatternmaker:terminal"
+      }
+    }
+  },
+  "questIDHigh:4": 8023847020092873014,
+  "questIDLow:4": -6522825816206771597,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:retrieval",
+      "autoConsume:1": 0,
+      "consume:1": 0,
+      "groupDetect:1": 0,
+      "ignoreNBT:1": 1,
+      "partialMatch:1": 0,
+      "requireOnlyOneItem:1": 0,
+      "requiredItems:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 0,
+          "OreDict:8": "",
+          "id:8": "superpatternmaker:terminal"
+        }
+      }
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": 7862019140011512166,
+      "questIDLow:4": -7991063138185523822
+    }
+  }
+}

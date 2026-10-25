@@ -1,0 +1,19 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "bg_image:8": "",
+      "bg_size:3": 256,
+      "desc:8": "Programmable Hatches: programming circuits, dual input hatches, crafting input buffers, ME stocking and remote I/O.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 22069,
+        "OreDict:8": "",
+        "id:8": "gregtech:gt.blockmachines"
+      },
+      "name:8": "Chapter 5: Programmable Hatches",
+      "visibility:8": "NORMAL"
+    }
+  },
+  "questLineIDHigh:4": 8302749820130841187,
+  "questLineIDLow:4": -5741808484937180723
+}

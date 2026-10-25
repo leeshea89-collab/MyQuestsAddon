@@ -1,0 +1,42 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Quest Kit",
+      "desc:8": "§bQuest Kit§r\n\nA replay helper: gives the items needed for the open quests in the current quest book chapter, minus what you already carry.\n\n§eUse§r: press its key, or /questkit [chapter | list].\n§eNote§r: its default key is ], the same as the objective panel's \"next quest\" key - rebind one of them in Controls.\n\n§aTask§r: tick the box once you've read this.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "minecraft:chest"
+      }
+    }
+  },
+  "questIDHigh:4": -7162373315223595824,
+  "questIDLow:4": -5139373044051858358,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -3513009521147422708,
+      "questIDLow:4": -5285312606347340264
+    }
+  }
+}

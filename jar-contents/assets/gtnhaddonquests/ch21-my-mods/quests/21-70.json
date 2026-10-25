@@ -1,0 +1,42 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Pattern Router",
+      "desc:8": "§bPattern Router§r\n\nShift-click an encoded pattern in the ME Interface Terminal and it goes straight into the interface of the machine that runs that recipe (a wiremill pattern goes to the wiremill), including GTNH addon machines and smelters. Chat tells you where it went, or why it couldn't.\n\n§aTask§r: tick the box once you've read this.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "ae2fc:wireless_interface_terminal"
+      }
+    }
+  },
+  "questIDHigh:4": 6932077480569690630,
+  "questIDLow:4": -8916665928996683916,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -3513009521147422708,
+      "questIDLow:4": -5285312606347340264
+    }
+  }
+}

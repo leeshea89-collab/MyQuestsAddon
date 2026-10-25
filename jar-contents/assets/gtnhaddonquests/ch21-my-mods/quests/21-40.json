@@ -1,0 +1,42 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "GTNH Greenhouse",
+      "desc:8": "§bGTNH Greenhouse§r\n\nA 5x5x4 multiblock that grows CropsNH crops, AgriCraft/Pam's plants and trees (including Forestry breeding).\n\n§eModes§r (screwdriver or GUI): §bHarvest§r (crop drops), §bPollination§r (cross-breed new seed types), §bGrowth§r (raise seed stats).\n§eSeed Bed Hatch§r: one seed per slot with its own under-soil block; LV is 2x2, each tier adds a row and column (8x8 from ZPM). It can't be a higher tier than the energy hatch.\n§eFertilizer§r goes in a normal input bus; drops come out of the output bus.\n\n§cRebalanced§r: Harvest uses Distilled Water (Purified Water from ZPM) and Sewage, Pollination uses Mutagen, Growth is slow and uses fertilizer. Plants per slot go from 4 at LV to 32 at UIV. The mod also adds the Soul Crusher (Chapter 1).\n\n§aTask§r: tick the box once you've read this.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 17400,
+        "OreDict:8": "",
+        "id:8": "gregtech:gt.blockmachines"
+      }
+    }
+  },
+  "questIDHigh:4": -6611761713843253246,
+  "questIDLow:4": -4945631910095692561,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -3513009521147422708,
+      "questIDLow:4": -5285312606347340264
+    }
+  }
+}

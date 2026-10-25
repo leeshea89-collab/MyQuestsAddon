@@ -1,0 +1,42 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "GTNH Scripts Floppy",
+      "desc:8": "§bGTNH Scripts Floppy§r\n\nA read-only OpenComputers disk of ready-made programs, given by Chapter 17. Put it in a computer and run §einstall§r.\n\nPrograms: power, powerctl, lscalarm, stock, aetop, geoscan, sorter, pulse, holoplanet, treefarm. Run §eman gtnh§r for help on each.\n\n§aTask§r: tick the box once you've read this.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 4,
+        "OreDict:8": "",
+        "id:8": "OpenComputers:item"
+      }
+    }
+  },
+  "questIDHigh:4": 6022884153176841423,
+  "questIDLow:4": -6711887212212980173,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -1297099876007716758,
+      "questIDLow:4": -4903818697916376772
+    }
+  }
+}

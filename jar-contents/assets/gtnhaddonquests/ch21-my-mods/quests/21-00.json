@@ -1,0 +1,37 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "My Mods",
+      "desc:8": "§bMy Mods§r\n\nYour own mods, all in one place. Each row below is one mod: the first quest explains it, the others are its key items.\n\n§bQuest & UI§r: GTNH Addon Quests (this book, the objective panel, AE2 counting, NEI bookmarks, the scripts floppy).\n§bFarming§r: Seed Bags, GTNH Greenhouse, Tree Sim Compat.\n§bMining§r: Cheaper Void Miners, GT Not Hard (Singularity NEI tabs).\n§bAE2 & patterns§r: Super Pattern Maker (with the Maintaining Input Hatch and Autocrafting Monitor), Pattern Router, Wildcard Pattern and Pattern Gen NC editions.\n§bHelpers§r: Free Build Projector, Quest Kit, GTNH Planner.\n\nRows for mods that aren't installed are hidden automatically.\n\n§aTask§r: tick the box once you've read this.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "betterquesting:guide_book"
+      }
+    }
+  },
+  "questIDHigh:4": -3513009521147422708,
+  "questIDLow:4": -5285312606347340264,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  },
+  "preRequisites:9": {}
+}

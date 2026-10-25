@@ -1,0 +1,70 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "ME Interface: Stock Keeper",
+      "desc:8": "§bME Interface: Stock Keeper§r\n\nPut an Adapter against an ME Interface (or the ME Controller).\n\n§estock§r keeps items in stock: it creates /home/stock.cfg, where each line is <item name> <damage> <amount>. When an item drops below its amount it requests a craft, once per item, until the job is done.\n\n§eaetop§r lists your most plentiful items and your network's power use.\n\n§6Run it§r: insert the GTNH Scripts disk and type §einstall§r once, then just type the program name. Type §eman gtnh§r for the full list.\n\n§aTask§r: have one in your inventory. It is not consumed.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "appliedenergistics2:tile.BlockInterface"
+      }
+    }
+  },
+  "questIDHigh:4": -9056263864760511414,
+  "questIDLow:4": -8512991870754201920,
+  "rewards:9": {
+    "0:10": {
+      "index:3": 0,
+      "ignoreDisabled:1": 0,
+      "rewardID:8": "bq_standard:item",
+      "rewards:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 42,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        }
+      }
+    }
+  },
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:retrieval",
+      "autoConsume:1": 0,
+      "consume:1": 0,
+      "groupDetect:1": 0,
+      "ignoreNBT:1": 1,
+      "partialMatch:1": 0,
+      "requireOnlyOneItem:1": 0,
+      "requiredItems:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 0,
+          "OreDict:8": "",
+          "id:8": "appliedenergistics2:tile.BlockInterface"
+        }
+      }
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -7868095119210554425,
+      "questIDLow:4": -6093773724311889153
+    }
+  }
+}

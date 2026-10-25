@@ -1,0 +1,19 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "bg_image:8": "",
+      "bg_size:3": 256,
+      "desc:8": "AE2 add-ons: the ME Comprehensive Work Terminal and its cards, extended buses, the Wireless Transceiver, wildcard patterns, the Infinity Storage Cell and the Advanced Memory Card.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "wtct:comprehensive_work_terminal"
+      },
+      "name:8": "Chapter 8: Advanced AE2 Automation",
+      "visibility:8": "NORMAL"
+    }
+  },
+  "questLineIDHigh:4": 8106792945571681384,
+  "questLineIDLow:4": -7065674764809788095
+}

@@ -1,0 +1,42 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Rockbloom Seeds",
+      "desc:8": "§bRockbloom Seeds§r\n\nSpace rock seeds, T0 to T10, that drop that tier's planet stones. Terran Rockbloom comes from crossing Stone Lily with another stone lily; T1-T4 cross the previous one with Reactoria, T5-T10 with Stargatium. Each needs Artificial Soil of its tier or better.\n\n§cRebalanced§r: about 1 block per harvest, plus 1 for every 2 seed bed tiers above the Rockbloom's.\n\n§aTask§r: tick the box once you've read this.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "cropsnh:genericSeed"
+      }
+    }
+  },
+  "questIDHigh:4": -7928667333148323448,
+  "questIDLow:4": -8622703057028939762,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -6611761713843253246,
+      "questIDLow:4": -4945631910095692561
+    }
+  }
+}

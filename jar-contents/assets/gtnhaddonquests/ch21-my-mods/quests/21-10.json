@@ -1,0 +1,42 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Seed Bags",
+      "desc:8": "§bSeed Bags§r\n\nLoot bags full of scanned CropsNH seeds, by game stage. Each has a Fortune twin with 10/10/10 seeds (normal bags give 1/1/1).\n\n§bOre Seeds I§r (100/101): overworld ore crops + their ore blocks.\n§bSeeds II Homestead§r (102/103), §bIII Industrial§r (104/105), §bIV Nether & Space§r (106/107, includes Rockbloom with the Greenhouse), §bV Endgame§r (108/109).\n§bRare Heirloom§r (110/111): one rare seed; the Fortune one gives 20/20/20.\n\nThey are quest rewards throughout this book.\n\n§cRebalanced§r: seed stats rise with the bag's stage (1/1/1 up to 6/6/6; Fortune bags double). Stage I-III seeds come unscanned. Rare Heirloom and Fortune Rare Heirloom are both 10/10/10.\n\n§aTask§r: tick the box once you've read this.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 100,
+        "OreDict:8": "",
+        "id:8": "enhancedlootbags:lootbag"
+      }
+    }
+  },
+  "questIDHigh:4": -6356612488286940693,
+  "questIDLow:4": -8163272364417268651,
+  "rewards:9": {},
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -3513009521147422708,
+      "questIDLow:4": -5285312606347340264
+    }
+  }
+}
