@@ -1,0 +1,82 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Resonating Pattern",
+      "desc:8": "§bResonating Pattern§r\n\nA pattern whose inputs are bound with the Resonating Binding Card. AE waits until every bound input is in place before it pushes the craft.\n\n§aTask§r: have one in your inventory. It is not consumed.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "tenkeitech:resonating_pattern"
+      }
+    }
+  },
+  "questIDHigh:4": 6595470156120281474,
+  "questIDLow:4": -8445655501597113050,
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:retrieval",
+      "autoConsume:1": 0,
+      "consume:1": 0,
+      "groupDetect:1": 0,
+      "ignoreNBT:1": 1,
+      "partialMatch:1": 0,
+      "requireOnlyOneItem:1": 0,
+      "requiredItems:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 0,
+          "OreDict:8": "",
+          "id:8": "tenkeitech:resonating_pattern"
+        }
+      }
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": 5233811601704507970,
+      "questIDLow:4": -7434233814114773955
+    }
+  },
+  "rewards:9": {
+    "0:10": {
+      "index:3": 0,
+      "ignoreDisabled:1": 0,
+      "rewardID:8": "bq_standard:item",
+      "rewards:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 6,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        },
+        "1:10": {
+          "Count:3": 3,
+          "Damage:2": 105,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        },
+        "2:10": {
+          "Count:3": 1,
+          "Damage:2": 0,
+          "OreDict:8": "",
+          "id:8": "fairplay:CoinIV"
+        }
+      }
+    }
+  }
+}

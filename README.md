@@ -29,3 +29,14 @@ generator from earlier versions was never pushed; `tools/rebalance.py` is the sc
 - Rebalance notes on the GT-Not-Hard and My Mods quests.
 
 To rebuild the jar: `cd jar-contents && zip -qr -X ../GTNH-Addon-Quests-v9.1.0.jar .`
+
+## GTNH Addon Quests 9.2.0
+
+`tools/add_v920.py` adds 40 quests for the mods added on 2026-11-04, each gated by its mod id:
+
+- Chapter 9 (GT Steam Reborn 2.1.9, `gtsr`): Steam Cooling Hatch, Mega Overpressure Steam Input Hatch, Cycle Overlimit Chip; processing cluster Crusher, Ore Washing, Logistics and Parallel Booster modules; Mimetic Loom and the four released critical machines (solar boiler, turbine core, artificial star as the finale, battery core).
+- Chapter 3 (MessTech 3.1, `MessTech`): reactor coolant input/output hatches, Large Essentia Generator, Small Essentia Smeltery, Large Processing Factory, Protocol Core, Comprehensive Mining Plant, Grand Space Elevator, Wireless Filtered Beam Output Hatch.
+- New Chapter 22 "Blueprints & ME Tools": TenkeiTech (`tenkeitech`) pattern buffers, template buses, wireless ME network, Better ME Requester and interface cards; GT Miao Blueprint (`gtmb`) projector, voucher and info quests; MIAOKATZE Core camera.
+- Rewards as 9.1.0 plus Fair Play Iridium coins (`fairplay:CoinIV`): 1 as the coin option of every fifth quest's choice, 1 on each row end, 3 on the finale.
+
+To rebuild: `git checkout -- jar-contents && git clean -fd jar-contents && python3 tools/add_v920.py`, then zip.

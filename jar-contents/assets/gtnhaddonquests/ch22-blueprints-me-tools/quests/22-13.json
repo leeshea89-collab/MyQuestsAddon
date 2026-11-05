@@ -1,0 +1,56 @@
+{
+  "properties:10": {
+    "betterquesting:10": {
+      "autoClaim:1": 0,
+      "globalShare:1": 0,
+      "isMain:1": 0,
+      "isSilent:1": 0,
+      "lockedProgress:1": 0,
+      "questLogic:8": "AND",
+      "repeatTime:3": -1,
+      "repeat_relative:1": 1,
+      "simultaneous:1": 0,
+      "snd_complete:8": "random.levelup",
+      "snd_update:8": "random.levelup",
+      "taskLogic:8": "AND",
+      "visibility:8": "NORMAL",
+      "name:8": "Refill, Replace, Dismantle",
+      "desc:8": "§bRefill, Replace, Dismantle§r\n\nRefill places what's missing, Replace swaps hatches and casings for the targets you picked, and Dismantle takes a structure down from the top and returns the items (Esc cancels). Number keys 1/2/3 switch mode; switching never builds anything on its own.\n\n§aTask§r: tick the box once you've read this.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 0,
+        "OreDict:8": "",
+        "id:8": "gtmb:neko_hologram_projector"
+      }
+    }
+  },
+  "questIDHigh:4": -7907094187263764884,
+  "questIDLow:4": -5944137602669916103,
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  },
+  "preRequisites:9": {
+    "0:10": {
+      "questIDHigh:4": -9173712791876444554,
+      "questIDLow:4": -7263495209874682022
+    }
+  },
+  "rewards:9": {
+    "0:10": {
+      "index:3": 0,
+      "ignoreDisabled:1": 0,
+      "rewardID:8": "bq_standard:item",
+      "rewards:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 4,
+          "OreDict:8": "",
+          "id:8": "enhancedlootbags:lootbag"
+        }
+      }
+    }
+  }
+}
