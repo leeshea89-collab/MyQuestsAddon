@@ -57,7 +57,8 @@ DUSTS = {
     'TE': ('dreamcraft:TCetiEStoneDust', 0, '', 'T Ceti E Stone Dust'),
     'VB': ('dreamcraft:VegaBStoneDust', 0, '', 'Vega B Stone Dust'),
 }
-CONTROLLER, MOD_HATCH = 31774, 31775
+CONTROLLER, MOD_HATCH, EATER, REFINERY = 31774, 31775, 31776, 31777
+PLUG = 'planetaryexploiter:sparkPlug'
 STACKS = 128
 
 # meta order of ItemPlanetDust.PLANETS: (abbr, name, dimension id or None, planet tier, flavour)
@@ -89,7 +90,7 @@ FUEL = {0: 'Rocket Fuel', 1: 'Rocket Fuel', 2: 'RP-1 Rocket Fuel', 3: 'Dense Hyd
         4: 'CN3H7O3 or H8N4C2O4 Rocket Fuel', 5: 'helium plasma', 6: 'nitrogen or oxygen plasma', 7: 'iron plasma',
         8: 'nickel plasma', 9: 'Raw Star Matter', 10: 'Molten SpaceTime'}
 ROD = {0: 'Thorium', 1: 'Uranium', 2: 'MOX', 3: 'Plutonium', 4: 'Naquadah', 5: 'Naquadria',
-       6: 'Naquadria', 7: 'Tiberium', 8: 'The Core', 9: 'a tier 9 rod (coming)', 10: 'a tier 10 rod (coming)'}
+       6: 'Naquadria', 7: 'Tiberium', 8: 'The Core', 9: 'Stellar', 10: 'Eternal'}
 VOLT = ['EV', 'EV', 'IV', 'LuV', 'ZPM', 'UV', 'UHV', 'UEV', 'UIV', 'UMV', 'UXV']
 
 
@@ -152,9 +153,9 @@ ROD_ITEMS = {0: ['gregtech:gt.rodThorium'], 1: ['gregtech:gt.rodUranium', 'IC2:r
              2: ['gregtech:gt.rodMOX', 'IC2:reactorMOXSimple'],
              3: ['gregtech:gt.rodHighDensityPlutonium', 'gregtech:gt.rodExcitedPlutonium'],
              4: ['gregtech:gt.rodNaquadah'], 5: ['gregtech:gt.rodNaquadria'], 6: ['gregtech:gt.rodNaquadria'],
-             7: ['gregtech:gt.rodTiberium'], 8: ['gregtech:gt.rodNaquadah32'], 9: [], 10: []}
+             7: ['gregtech:gt.rodTiberium'], 8: ['gregtech:gt.rodNaquadah32'], 9: [(PLUG, 0)], 10: [(PLUG, 1)]}
 ROD_NAME = {0: 'Thorium', 1: 'Uranium', 2: 'MOX', 3: 'Plutonium', 4: 'Naquadah', 5: 'Naquadria', 6: 'Naquadria',
-            7: 'Tiberium', 8: 'The Core', 9: None, 10: None}
+            7: 'Tiberium', 8: 'The Core', 9: 'Stellar Spark Plug', 10: 'Eternal Spark Plug'}
 FUEL_LITRES = 1000
 
 
@@ -186,7 +187,8 @@ MACHINES = [
     ('fuel', 216, 0, 'Fuel and Spark Plugs', item('minecraft:blaze_rod'), [checkbox()],
      "The machine burns rocket fuel from an input hatch while it mines: Rocket Fuel for T0-T1 planets, RP-1 for T2, "
      "Dense Hydrazine for T3, and on through plasmas to SpaceTime. Moving the lasers to a new square burns spark plug "
-     "charge: Thorium for T0, Uranium T1, MOX T2, Plutonium T3. A better rod burns less.", 2, ['modhatch']),
+     "charge: Thorium for T0, Uranium T1, MOX T2, Plutonium T3 and on up to The Core for T8. Tiers 9 and 10 need the "
+     "mod's own Stellar and Eternal Spark Plugs. A better rod burns less.", 2, ['modhatch']),
     ('tier2', 288, 0, 'Tier 2 Ring', item('gregtech:gt.blockcasings5', 4), [checkbox()],
      "Build the second ring round and above the first, without taking anything down: a wider solid steel floor, a "
      "tube of Robust Tungstensteel round HSS-G coils with coil bands wound round it, four IV emitters and "
@@ -203,8 +205,33 @@ MACHINES = [
      "UV machine casing round Trinium coils, twelve Fusion Machine Casing emitters and naquadah alloy legs. 16A of UV; "
      "reaches T5 planets.", 4, ['tier4']),
     ('tier6', 576, 0, 'Tier 6 Ring', item('gregtech:gt.blockcasings5', 7), [checkbox()],
-     "The outer ring of the funnel: Fusion Machine Casing Mk-II round Electrum Flux coils, twelve Fusion Coil emitters "
-     "and neutronium legs, on an 81x81 floor. 32A of UHV; reaches T6 planets.", 5, ['tier5']),
+     "Fusion Machine Casing Mk-II round Electrum Flux coils, twelve Fusion Coil emitters and neutronium legs, on an "
+     "81x81 floor. 32A of UHV; reaches T6 planets.", 5, ['tier5']),
+    ('tier7', 648, 0, 'Tier 7 Ring', item('gregtech:gt.blockcasings5', 8), [checkbox()],
+     "The endgame rings step out 5 blocks at a time and carry sixteen lasers each. Tier 7: Fusion Machine Casing "
+     "Mk-III round Awakened Draconium coils, with cosmic neutronium legs (the guide book and the Structure "
+     "Projector show the exact casings in your pack). 64A of UEV; reaches T7 planets.", 5, ['tier6']),
+    ('tier8', 720, 0, 'Tier 8 Ring', item('gregtech:gt.blockcasings5', 11), [checkbox()],
+     "Molecular Casing round Infinity coils, Advanced Molecular Casing emitters and infinity legs. 128A of UIV; "
+     "reaches T8 planets.", 6, ['tier7']),
+    ('tier9', 792, 0, 'Tier 9 Ring', item('gregtech:gt.blockcasings5', 12), [checkbox()],
+     "Spacetime Altering Casing round Hypogen coils, spacetime-boundary emitters and SpaceTime legs. 256A of UMV; "
+     "reaches T9 planets with a Stellar Spark Plug.", 6, ['tier8']),
+    ('tier10', 864, 0, 'Tier 10 Ring', item('gregtech:gt.blockcasings5', 13), [checkbox()],
+     "The crown of the funnel, 121 blocks across: Reinforced Temporal Structure Casing round Eternal coils, spatial "
+     "structure emitters and transcendent metal legs. 512A of UXV; reaches the Deep Dark with an Eternal Spark Plug.",
+     6, ['tier9']),
+    ('eater', 144, 48, 'Planet Eater', item(GT, EATER), [retrieval([item(GT, EATER)], False)],
+     "A 5x5 EV drilling rig. It strips the 3x3 chunks round it, a layer at a time from under the machine down to "
+     "bedrock, and keeps only the planet's own rock (moon turf and regolith count). Ores, soil and sand stay put, and "
+     "every hole is back-filled with cobblestone. Off-world only.\n\nPut a drill tip in the controller: EV for T1 "
+     "planets and one voltage higher per planet tier. Each tier better doubles the speed and makes the tip last four "
+     "times longer. The rock it digs is exactly what the planet quests want macerated.", 2, ['guide']),
+    ('refinery', 216, 48, 'Regolith Refinery', item(GT, REFINERY), [retrieval([item(GT, REFINERY)], False)],
+     "A 7x7 IV refinery that crushes and centrifuges planet rock in one step, with GregTech's own macerator and "
+     "centrifuge recipes. Only planet surface blocks go in.\n\nA Huge Turbine Rotor in the controller is the "
+     "crusher: its material sets how many blocks it does at once (twice the tool speed) and the highest recipe "
+     "voltage (tool quality + 2), and it wears down as it works.", 3, ['eater']),
 ]
 
 
@@ -238,7 +265,9 @@ def planet_quest(meta, abbr, name, dim, tier, flavour):
             what = f"Visit {name}, then hand in {n} of §e{dname}§r."
         else:
             what = f"Hand in {n} of §e{dname}§r."
-        how = f"Macerate {name}'s rock to make it. The Planet Eater (coming) will strip whole layers of rock for you.\n\n"
+        how = (f"Macerate {name}'s rock to make it. A Planet Eater on {name} strips whole layers of rock for you, "
+               f"and a Regolith Refinery turns it into dust and more.\n\n") if abbr not in ('Ow', 'Ne', 'ED', 'EA', 'TF', 'Eg') \
+            else f"Macerate {name}'s rock to make it.\n\n"
     else:
         what = f"Visit {name}. There is no {name} dust in the pack, so the visit is enough."
         how = ""
@@ -304,7 +333,7 @@ def main():
             nth += 1
 
     def machine_key(planet_tier):
-        mt = min(6, machine_tier_for(planet_tier))
+        mt = min(10, machine_tier_for(planet_tier))
         return 'controller' if mt <= 1 else f'tier{mt}'
 
     lane_tiers = sorted({p[3] for p in PLANETS})
@@ -321,18 +350,29 @@ def main():
         nth += 1
         rods = ROD_ITEMS[tier]
         if rods:
-            rod_tasks = [dict(retrieval([item(r) for r in rods], False), **{"requireOnlyOneItem:1": 1})]
-            rod_icon = item(rods[0])
-            rod_text = (f"Moving the lasers to a new square burns the spark plug: a §e{ROD_NAME[tier]}§r fuel rod (or "
-                        f"better) in the Modification Hatch's Plug slot. A rod of the planet's own tier burns 10% per "
-                        f"square, and each tier above burns less.\n\n§aTask§r: have one in your inventory. It is not "
-                        f"consumed.")
+            stacks = [item(r) if isinstance(r, str) else item(r[0], r[1]) for r in rods]
+            rod_tasks = [dict(retrieval(stacks, False), **{"requireOnlyOneItem:1": 1})]
+            rod_icon = stacks[0]
+            if tier >= 9:
+                made_by = ("Assembler, UMV: Field Generator, 2 Sensors and 2 Emitters (UMV) with 1,000 L of raw star "
+                           "matter." if tier == 9 else
+                           "Assembler, UXV: a Stellar Spark Plug, a Field Generator, 2 Sensors and 2 Emitters (UXV) "
+                           "with 1,440 L of molten SpaceTime.")
+                rod_text = (f"No fuel rod in the pack reaches tier {tier}, so the Planetary Exploiter has its own: the "
+                            f"§e{ROD_NAME[tier]}§r. It goes in the Modification Hatch's Plug slot and burns charge "
+                            f"like any rod.\n\n{made_by}\n\n§aTask§r: have one in your inventory. It is not "
+                            f"consumed.")
+            else:
+                rod_text = (f"Moving the lasers to a new square burns the spark plug: a §e{ROD_NAME[tier]}§r fuel rod "
+                            f"(or better) in the Modification Hatch's Plug slot. A rod of the planet's own tier burns "
+                            f"10% per square, and each tier above burns less.\n\n§aTask§r: have one in your inventory. "
+                            f"It is not consumed.")
         else:
             rod_tasks = [checkbox()]
             rod_icon = item('minecraft:blaze_rod')
             rod_text = ("No fuel rod in the pack reaches this tier yet; a spark plug for it is coming with a later "
                         "version of the Planetary Exploiter.\n\n§aTask§r: tick the box once you've read this.")
-        write(f'rod-{tier}', 60, y, f'T{tier} Spark Plug' + (f': {ROD_NAME[tier]}' if ROD_NAME[tier] else ''),
+        write(f'rod-{tier}', 60, y, f'T{tier} Spark Plug' if tier >= 9 else f'T{tier} Spark Plug: {ROD_NAME[tier]}',
               rod_icon, rod_tasks, f"§bT{tier} Spark Plug§r\n\n{rod_text}", band, [f'fuel-{tier}'], '')
         nth += 1
 
