@@ -24,7 +24,39 @@ TIERBAG = {0: 2, 1: 4, 2: 6, 3: 8, 4: 42, 5: 44, 6: 44}
 TIERBAG_STAGE = {2: 102, 4: 100, 6: 104, 8: 104, 42: 106, 44: 108}
 IRIDIUM = 'fairplay:CoinIV'
 GT = 'gregtech:gt.blockmachines'
-DUST = 'planetaryexploiter:planet_dust'
+# The pack's own planet dusts (NewHorizonsCoreMod 2.9.84 ids; GT dusts for Earth, Nether and End).
+# Planets missing here have no dust in the pack, so their quest is a visit only.
+GT_META = 'gregtech:gt.metaitem.01'
+DUSTS = {
+    'Ow': (GT_META, 2299, 'dustStone', 'Stone Dust'), 'Ne': (GT_META, 2807, 'dustNetherrack', 'Netherrack Dust'),
+    'ED': (GT_META, 2808, 'dustEndstone', 'End Stone Dust'), 'EA': (GT_META, 2808, 'dustEndstone', 'End Stone Dust'),
+    'Mo': ('dreamcraft:MoonStoneDust', 0, '', 'Moon Stone Dust'),
+    'De': ('dreamcraft:DeimosStoneDust', 0, '', 'Deimos Stone Dust'),
+    'Ma': ('dreamcraft:MarsStoneDust', 0, '', 'Mars Stone Dust'),
+    'Ph': ('dreamcraft:PhobosStoneDust', 0, '', 'Phobos Stone Dust'),
+    'As': ('dreamcraft:AsteroidsStoneDust', 0, '', 'Asteroids Stone Dust'),
+    'Ca': ('dreamcraft:CallistoStoneDust', 0, '', 'Callisto Stone Dust'),
+    'Ce': ('dreamcraft:CeresStoneDust', 0, '', 'Ceres Stone Dust'),
+    'Eu': ('dreamcraft:EuropaStoneDust', 0, '', 'Europa Stone Dust'),
+    'Ga': ('dreamcraft:GanymedeStoneDust', 0, '', 'Ganymede Stone Dust'),
+    'Io': ('dreamcraft:IoStoneDust', 0, '', 'Io Stone Dust'),
+    'Me': ('dreamcraft:MercuryStoneDust', 0, '', 'Mercury Stone Dust'),
+    'Ve': ('dreamcraft:VenusStoneDust', 0, '', 'Venus Stone Dust'),
+    'En': ('dreamcraft:EnceladusStoneDust', 0, '', 'Enceladus Stone Dust'),
+    'Mi': ('dreamcraft:MirandaStoneDust', 0, '', 'Miranda Stone Dust'),
+    'Ob': ('dreamcraft:OberonStoneDust', 0, '', 'Oberon Stone Dust'),
+    'Ti': ('dreamcraft:TitanStoneDust', 0, '', 'Titan Stone Dust'),
+    'Pr': ('dreamcraft:ProteusStoneDust', 0, '', 'Proteus Stone Dust'),
+    'Tr': ('dreamcraft:TritonStoneDust', 0, '', 'Triton Stone Dust'),
+    'Ha': ('dreamcraft:HaumeaStoneDust', 0, '', 'Haumea Stone Dust'),
+    'MM': ('dreamcraft:MakeMakeStoneDust', 0, '', 'Makemake Stone Dust'),
+    'Pl': ('dreamcraft:PlutoStoneDust', 0, '', 'Pluto Stone Dust'),
+    'BE': ('dreamcraft:BarnardaEStoneDust', 0, '', 'Barnarda E Stone Dust'),
+    'BF': ('dreamcraft:BarnardaFStoneDust', 0, '', 'Barnarda F Stone Dust'),
+    'CB': ('dreamcraft:CentauriAStoneDust', 0, '', 'Centauri A Stone Dust'),
+    'TE': ('dreamcraft:TCetiEStoneDust', 0, '', 'T Ceti E Stone Dust'),
+    'VB': ('dreamcraft:VegaBStoneDust', 0, '', 'Vega B Stone Dust'),
+}
 CONTROLLER, MOD_HATCH = 31774, 31775
 STACKS = 128
 
@@ -190,21 +222,28 @@ def planet_entries():
 
 
 def planet_quest(meta, abbr, name, dim, tier, flavour):
-    dust = item(DUST, meta, STACKS * 64)
     tasks = []
     visit = dim is not None and abbr != 'Ow'
     if visit:
         tasks.append(location(name if abbr != 'EA' else 'The End (for End Asteroids)', dim))
-    tasks.append(retrieval([dust], True))
+    dust = DUSTS.get(abbr)
+    n = f"{STACKS} stacks ({STACKS * 64:,})"
+    if dust:
+        reg, dmg, ore, dname = dust
+        tasks.append(retrieval([{"Count:3": STACKS * 64, "Damage:2": dmg, "OreDict:8": ore, "id:8": reg}], True))
+        if abbr == 'EA':
+            what = (f"End Asteroids share The End's dimension, so visit The End, then hand in {n} of "
+                    f"§e{dname}§r from the asteroids' end stone.")
+        elif visit:
+            what = f"Visit {name}, then hand in {n} of §e{dname}§r."
+        else:
+            what = f"Hand in {n} of §e{dname}§r."
+        how = f"Macerate {name}'s rock to make it. The Planet Eater (coming) will strip whole layers of rock for you.\n\n"
+    else:
+        what = f"Visit {name}. There is no {name} dust in the pack, so the visit is enough."
+        how = ""
     mt = machine_tier_for(tier)
-    what = (f"Visit {name}, then hand in {STACKS} stacks ({STACKS * 64:,}) of {name} Dust."
-            if visit else f"Hand in {STACKS} stacks ({STACKS * 64:,}) of {name} Dust.")
-    if abbr == 'EA':
-        what = (f"End Asteroids share The End's dimension, so visit The End, then hand in {STACKS} stacks "
-                f"({STACKS * 64:,}) of End Asteroids Dust.")
-    body = (f"{flavour}\n\n§bTier {tier}§r planet. {what}\n\n"
-            f"Make the dust by macerating {name}'s surface rock with §eProgrammed Circuit 23§r. The Planet Eater "
-            f"(coming) will strip whole layers of rock for you.\n\n"
+    body = (f"{flavour}\n\n§bTier {tier}§r planet. {what}\n\n{how}"
             f"Reward: the §e{name} planet block§r. Put it in a tier {mt} (or better) Planetary Exploiter "
             f"({VOLT[tier]} power, {FUEL[tier]}, a {ROD[tier]} spark plug or better) to mine {name} from home.")
     return tasks, body
@@ -315,7 +354,7 @@ def main():
     json.dump({"properties:10": {"betterquesting:10": {
         "bg_image:8": "", "bg_size:3": 256,
         "desc:8": "The Planetary Exploiter: a ring machine that mines planets from afar through a 9x9 survey map. "
-                  "Visit each planet and bring back its dust to earn its planet block.",
+                  "Visit each planet and bring back its stone dust to earn its planet block.",
         "icon:10": item(GT, CONTROLLER), "name:8": "Chapter 23: Planetary Exploitation",
         "visibility:8": "NORMAL"}}, "questLineIDHigh:4": chi, "questLineIDLow:4": clo},
         open(f'{R}/{CH}/QuestLine.json', 'w'), indent=2, ensure_ascii=False)
