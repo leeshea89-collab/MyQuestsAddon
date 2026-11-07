@@ -1,6 +1,8 @@
-"""Quest mod v9.3.0: new Chapter 23 "Planetary Exploitation" for the Planetary Exploiter mod.
+"""Quest mod v9.3.0 / v9.4.0: Chapter 23 "Planetary Exploitation" for the Planetary Exploiter mod.
 
-- Machine row: the guide, the controller, the Modification Hatch, fuel and spark plugs, the tier 2 and tier 3 rings.
+- Machine row: the guide, the controller, the Modification Hatch, fuel and spark plugs, the tier 2-6 rings.
+- v9.4.0: every planet lane starts with its Fuel quest (have 1,000 L of that tier's fuel) and Spark Plug quest (have
+  that tier's fuel rod); the lane's planets need both, so you unlock the fuel and the rod before the planets.
 - One quest per planet (the same 43 as Chapter 1), in a lane per planet tier. Each quest asks you to visit the
   planet AND hand in 128 stacks (8,192) of its Planet Dust (planetaryexploiter:planet_dust, meta = planet index).
   The Overworld skips the visit (you live there); End Asteroids is visited through The End (same dimension).
@@ -54,8 +56,8 @@ PLANETS = [
 FUEL = {0: 'Rocket Fuel', 1: 'Rocket Fuel', 2: 'RP-1 Rocket Fuel', 3: 'Dense Hydrazine Fuel Mixture',
         4: 'CN3H7O3 or H8N4C2O4 Rocket Fuel', 5: 'helium plasma', 6: 'nitrogen or oxygen plasma', 7: 'iron plasma',
         8: 'nickel plasma', 9: 'Raw Star Matter', 10: 'Molten SpaceTime'}
-ROD = {0: 'Thorium', 1: 'Uranium', 2: 'MOX', 3: 'Plutonium', 4: 'Naquadah', 5: 'Enriched Naquadah',
-       6: 'Naquadria', 7: 'Tiberium', 8: 'The Core', 9: 'a tier 9 rod', 10: 'a tier 10 rod'}
+ROD = {0: 'Thorium', 1: 'Uranium', 2: 'MOX', 3: 'Plutonium', 4: 'Naquadah', 5: 'Naquadria',
+       6: 'Naquadria', 7: 'Tiberium', 8: 'The Core', 9: 'a tier 9 rod (coming)', 10: 'a tier 10 rod (coming)'}
 VOLT = ['EV', 'EV', 'IV', 'LuV', 'ZPM', 'UV', 'UHV', 'UEV', 'UIV', 'UMV', 'UXV']
 
 
@@ -102,6 +104,28 @@ def location(name, dim):
             "invert:1": 0, "taxiCabDist:1": 0}
 
 
+def fluid_task(name, amount):
+    return {"taskID:8": "bq_standard:fluid", "autoConsume:1": 0, "consume:1": 0, "groupDetect:1": 0, "partialMatch:1": 0,
+            "ignoreNBT:1": 1, "requiredFluids:9": {"0:10": {"FluidName:8": name, "Amount:3": amount}}}
+
+
+# Fuel fluid (registry name, shown name) and spark plug items per planet tier, checked against the pack's log.
+FUEL_FLUID = {0: ('rocket_fuel', 'Rocket Fuel'), 1: ('rocket_fuel', 'Rocket Fuel'),
+              2: ('fluid.rocketfuelmixb', 'RP-1 Rocket Fuel'), 3: ('fluid.rocketfuelmixd', 'Dense Hydrazine Fuel Mixture'),
+              4: ('fluid.rocketfuelmixc', 'CN3H7O3 Rocket Fuel'), 5: ('plasma.helium', 'Helium Plasma'),
+              6: ('plasma.nitrogen', 'Nitrogen Plasma'), 7: ('plasma.iron', 'Iron Plasma'),
+              8: ('plasma.nickel', 'Nickel Plasma'), 9: ('rawstarmatter', 'Condensed Raw Stellar Plasma Mixture'),
+              10: ('molten.spacetime', 'Molten SpaceTime')}
+ROD_ITEMS = {0: ['gregtech:gt.rodThorium'], 1: ['gregtech:gt.rodUranium', 'IC2:reactorUraniumSimple'],
+             2: ['gregtech:gt.rodMOX', 'IC2:reactorMOXSimple'],
+             3: ['gregtech:gt.rodHighDensityPlutonium', 'gregtech:gt.rodExcitedPlutonium'],
+             4: ['gregtech:gt.rodNaquadah'], 5: ['gregtech:gt.rodNaquadria'], 6: ['gregtech:gt.rodNaquadria'],
+             7: ['gregtech:gt.rodTiberium'], 8: ['gregtech:gt.rodNaquadah32'], 9: [], 10: []}
+ROD_NAME = {0: 'Thorium', 1: 'Uranium', 2: 'MOX', 3: 'Plutonium', 4: 'Naquadah', 5: 'Naquadria', 6: 'Naquadria',
+            7: 'Tiberium', 8: 'The Core', 9: None, 10: None}
+FUEL_LITRES = 1000
+
+
 def checkbox():
     return {"taskID:8": "bq_standard:checkbox"}
 
@@ -119,7 +143,7 @@ MACHINES = [
      "map, parts, fuel and spark plugs, and what each warning means.", 2, []),
     ('controller', 72, 0, 'Planetary Exploiter', item(GT, CONTROLLER), [retrieval([item(GT, CONTROLLER)], False)],
      "One controller for every tier. Build tier 1 round it (the Structure Projector with stack size 1 shows it): a "
-     "19x19 solid steel floor, a titanium plinth that holds every hatch, and a fusion-sized ring of "
+     "21x21 solid steel floor, a titanium plinth that holds every hatch, and a fusion-sized ring of "
      "Frost Proof casing round a core of TPV coils, with four laser arms. It needs 1A of EV.\n\n"
      "Put a planet block in the controller (sneak + right-click), then right-click it to open the map.", 2,
      ['guide']),
@@ -132,14 +156,23 @@ MACHINES = [
      "Dense Hydrazine for T3, and on through plasmas to SpaceTime. Moving the lasers to a new square burns spark plug "
      "charge: Thorium for T0, Uranium T1, MOX T2, Plutonium T3. A better rod burns less.", 2, ['modhatch']),
     ('tier2', 288, 0, 'Tier 2 Ring', item('gregtech:gt.blockcasings5', 4), [checkbox()],
-     "Build the second ring round the first, without taking anything down: a wider solid steel floor, a waving ring of "
-     "Robust Tungstensteel round HSS-G coils with more coils snaking over and under it, four IV emitters and "
+     "Build the second ring round and above the first, without taking anything down: a wider solid steel floor, a "
+     "tube of Robust Tungstensteel round HSS-G coils with coil bands wound round it, four IV emitters and "
      "tungstensteel legs. It needs 2A of IV and reaches T2 planets. Easier planets now get a bigger aim.", 3,
      ['controller']),
     ('tier3', 360, 0, 'Tier 3 Ring', item('gregtech:gt.blockcasings5', 5), [checkbox()],
-     "The third ring: a 41x41 floor, a ring of LuV machine casing round Naquadah coils with snaking coils, eight "
-     "emitters and HSS-G legs. It needs 4A of LuV (multi-amp or laser hatches work) and reaches T3 planets.", 3,
+     "The third ring, wider and higher again: LuV machine casing round Naquadah coils with coil bands wound round it, "
+     "eight emitters and HSS-G legs. It needs 4A of LuV (multi-amp or laser hatches work) and reaches T3 planets.", 3,
      ['tier2']),
+    ('tier4', 432, 0, 'Tier 4 Ring', item('gregtech:gt.blockcasings5', 6), [checkbox()],
+     "ZPM machine casing round Naquadah Alloy coils, eight emitters and naquadah legs. 8A of ZPM; reaches T4 planets.",
+     4, ['tier3']),
+    ('tier5', 504, 0, 'Tier 5 Ring', item('gregtech:gt.blockcasings5', 10), [checkbox()],
+     "UV machine casing round Trinium coils, twelve Fusion Machine Casing emitters and naquadah alloy legs. 16A of UV; "
+     "reaches T5 planets.", 4, ['tier4']),
+    ('tier6', 576, 0, 'Tier 6 Ring', item('gregtech:gt.blockcasings5', 7), [checkbox()],
+     "The outer ring of the funnel: Fusion Machine Casing Mk-II round Electrum Flux coils, twelve Fusion Coil emitters "
+     "and neutronium legs, on an 81x81 floor. 32A of UHV; reaches T6 planets.", 5, ['tier5']),
 ]
 
 
@@ -152,7 +185,7 @@ def planet_entries():
     for tier, lane in sorted(lanes.items()):
         y = 96 + tier * 60
         for k, (meta, abbr, name, dim, t, flavour) in enumerate(lane):
-            out.append((meta, abbr, name, dim, t, flavour, k * 60, y, k == len(lane) - 1 and len(lane) > 1))
+            out.append((meta, abbr, name, dim, t, flavour, 144 + k * 60, y, k == len(lane) - 1))
     return out
 
 
@@ -181,7 +214,8 @@ def main():
     os.makedirs(f'{R}/{CH}/quests', exist_ok=True)
     os.makedirs(f'{R}/{CH}/placements', exist_ok=True)
     index = ['# quest UUID (base64url)\tquest file\tplacement file\tmod id']
-    keys = [m[0] for m in MACHINES] + [f'planet-{p[0]}' for p in PLANETS]
+    keys = [m[0] for m in MACHINES] + [f'planet-{p[0]}' for p in PLANETS] + \
+        [f'fuel-{t}' for t in range(11)] + [f'rod-{t}' for t in range(11)]
     ids = {k: qid(k) for k in keys}
     made = []
     nth = 0
@@ -201,7 +235,7 @@ def main():
         pr = {}
         for k, r in enumerate(pre):
             e = {"questIDHigh:4": ids[r][1], "questIDLow:4": ids[r][2]}
-            if hidden_pre:
+            if hidden_pre is True or (hidden_pre and r in hidden_pre):
                 e["type:1"] = 2
             pr[f"{k}:10"] = e
         if pr:
@@ -230,15 +264,49 @@ def main():
         if kind == '':
             nth += 1
 
+    def machine_key(planet_tier):
+        mt = min(6, machine_tier_for(planet_tier))
+        return 'controller' if mt <= 1 else f'tier{mt}'
+
+    lane_tiers = sorted({p[3] for p in PLANETS})
+    for tier in lane_tiers:
+        y = 96 + tier * 60
+        reg, fname = FUEL_FLUID[tier]
+        band = quest_band(tier)
+        write(f'fuel-{tier}', 0, y, f'T{tier} Fuel: {fname}', item('IC2:itemFluidCell'),
+              [fluid_task(reg, FUEL_LITRES)],
+              f"§bT{tier} Fuel§r\n\nThe Planetary Exploiter burns §e{fname}§r (or any better fuel) from an input "
+              f"hatch while it mines a tier {tier} planet, {['10', '20', '40', '80', '160', '320', '640', '1,280', '2,560', '5,120', '10,240'][tier]} L "
+              f"a second (three times that for ore + fluid).\n\n§aTask§r: have {FUEL_LITRES:,} L of it in a container in "
+              f"your inventory. It is not consumed.", band, [machine_key(tier)], '', hidden_pre=True)
+        nth += 1
+        rods = ROD_ITEMS[tier]
+        if rods:
+            rod_tasks = [dict(retrieval([item(r) for r in rods], False), **{"requireOnlyOneItem:1": 1})]
+            rod_icon = item(rods[0])
+            rod_text = (f"Moving the lasers to a new square burns the spark plug: a §e{ROD_NAME[tier]}§r fuel rod (or "
+                        f"better) in the Modification Hatch's Plug slot. A rod of the planet's own tier burns 10% per "
+                        f"square, and each tier above burns less.\n\n§aTask§r: have one in your inventory. It is not "
+                        f"consumed.")
+        else:
+            rod_tasks = [checkbox()]
+            rod_icon = item('minecraft:blaze_rod')
+            rod_text = ("No fuel rod in the pack reaches this tier yet; a spark plug for it is coming with a later "
+                        "version of the Planetary Exploiter.\n\n§aTask§r: tick the box once you've read this.")
+        write(f'rod-{tier}', 60, y, f'T{tier} Spark Plug' + (f': {ROD_NAME[tier]}' if ROD_NAME[tier] else ''),
+              rod_icon, rod_tasks, f"§bT{tier} Spark Plug§r\n\n{rod_text}", band, [f'fuel-{tier}'], '')
+        nth += 1
+
     for meta, abbr, name, dim, tier, flavour, x, y, lane_end in planet_entries():
         tasks, body = planet_quest(meta, abbr, name, dim, tier, flavour)
-        mt = machine_tier_for(tier)
-        pre = ['controller'] if mt <= 1 else ['tier2'] if mt == 2 else ['tier3']
+        pre = [machine_key(tier), f'rod-{tier}']
         band = quest_band(tier)
         kind = 'finale' if abbr == 'DD' else 'row end' if lane_end else ''
         block = item(f'gtneioreplugin:blockDimensionDisplay_{abbr}')
+        # The first planet of a lane shows its line from the spark plug; the rest stay tidy.
+        hidden = {pre[0]} if x == 144 else set(pre)
         write(f'planet-{abbr}', x, y, name, block, tasks, f"§b{name}§r\n\n{body}", band, pre, kind,
-              extra_items=[block], hidden_pre=True)
+              extra_items=[block], hidden_pre=hidden)
         if kind == '':
             nth += 1
 
