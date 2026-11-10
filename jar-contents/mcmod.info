@@ -3,7 +3,7 @@
     "modid": "gtnhaddonquests",
     "name": "GTNH Addon Quests",
     "description": "Addon quest chapters for Better Questing: 22 chapters, 632 quests. 9.2.0: quests for GT Steam Reborn 2.1.9 (turbine upgrades, processing cluster modules, Mimetic Loom and critical machines), MessTech 3.1 (coolant loop, essentia power, Protocol Core, Comprehensive Mining Plant, Grand Space Elevator) and the new Chapter 22 (TenkeiTech, GT Miao Blueprint). Iridium coin rewards. Player progress is kept.",
-    "version": "9.6.0",
+    "version": "9.6.1",
     "mcversion": "1.7.10",
     "authorList": [
       "GTNH addon questbook project"

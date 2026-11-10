@@ -229,9 +229,9 @@ MACHINES = [
      "times longer. The rock it digs is exactly what the planet quests want macerated.", 2, ['guide']),
     ('refinery', 216, 48, 'Regolith Refinery', item(GT, REFINERY), [retrieval([item(GT, REFINERY)], False)],
      "A 7x7 IV refinery that crushes and centrifuges planet rock in one step, with GregTech's own macerator and "
-     "centrifuge recipes. Only planet surface blocks go in.\n\nA Huge Turbine Rotor in the controller is the "
-     "crusher: its material sets how many blocks it does at once (twice the tool speed) and the highest recipe "
-     "voltage (tool quality + 2), and it wears down as it works.", 3, ['eater']),
+     "centrifuge recipes. Only planet surface blocks go in.\n\nAny turbine rotor in the controller is the "
+     "crusher, and it wears down as it works. Bigger rotors do more blocks at once (tool speed x size / 2: Small x1, "
+     "Normal x2, Large x3, Huge x4), and the material sets the highest recipe voltage (tool quality + 2).", 3, ['eater']),
 ]
 
 
