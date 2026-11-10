@@ -283,7 +283,7 @@ def main():
     os.makedirs(f'{R}/{CH}/quests', exist_ok=True)
     os.makedirs(f'{R}/{CH}/placements', exist_ok=True)
     index = ['# quest UUID (base64url)\tquest file\tplacement file\tmod id']
-    keys = [m[0] for m in MACHINES] + [f'planet-{p[0]}' for p in PLANETS] + \
+    keys = [m[0] for m in MACHINES] + ['toolkit'] + [f'planet-{p[0]}' for p in PLANETS] + \
         [f'fuel-{t}' for t in range(11)] + [f'rod-{t}' for t in range(11)]
     ids = {k: qid(k) for k in keys}
     made = []
@@ -332,6 +332,20 @@ def main():
         write(key, x, y, name, icon, tasks, f"§b{name}§r\n\n{body}\n\n§aTask§r: {done}", band, pre, kind)
         if kind == '':
             nth += 1
+
+    # Technician's toolkit: a free Portable Scanner (charged) and other diagnostic parts, so a stuck machine
+    # can be read without crafting a scanner first.
+    MI = 'gregtech:gt.metaitem.01'
+    scanner = dict(item(MI, 32762), **{"tag:10": {"GT.ItemCharge:4": 400000}})
+    kit = [scanner, item(MI, 32708, 4), item(MI, 32707, 2), item(MI, 32709), item(MI, 32693, 2),
+           item(MI, 32683, 2), item(MI, 32731, 2), item(MI, 32740, 2)]
+    write('toolkit', 288, 48, "Technician's Toolkit", item(MI, 32762), [checkbox()],
+          "§bTechnician's Toolkit§r\n\nRight-click any of these machines with a §ePortable Scanner§r to see exactly why "
+          "it is idle (no rotor, no rock, not enough power, wrong drill tip...).\n\nThis kit hands you a charged "
+          "Portable Scanner, 4 Data Sticks, 2 Data Orbs, a Cover Copy/Paste tool, 2 EV Sensors, 2 EV Emitters, "
+          "2 Activity Detector covers and 2 Screen covers.\n\n§aTask§r: tick the box.", 2, ['guide'], '',
+          extra_items=kit)
+    nth += 1
 
     def machine_key(planet_tier):
         mt = min(10, machine_tier_for(planet_tier))
