@@ -230,9 +230,10 @@ MACHINES = [
     ('refinery', 216, 48, 'Regolith Refinery', item(GT, REFINERY), [retrieval([item(GT, REFINERY)], False)],
      "A 7x7 IV refinery that crushes and centrifuges planet rock in one step, with GregTech's own macerator and "
      "centrifuge recipes. Only planet surface blocks go in.\n\nAny turbine rotor in the controller is the "
-     "crusher, and it wears down as it works. It does (rotor tier x size x 4) blocks at once, using the tier on the "
-     "rotor's tooltip: Small x1, Normal x2, Large x3, Huge x4, so a tier 10 rotor does 40 / 80 / 120 / 160, and spare "
-     "power overclocks it. The highest "
+     "crusher, and it wears down as it works. It works in batches: one batch is enough rock for one centrifuge "
+     "run (about 38 blocks of Moon Dirt). It does (rotor tier x size) batches at once, using the tier on the rotor's "
+     "tooltip: Small x1, Normal x2, Large x4, Huge x8. A run takes 40 seconds at HV, 20 at EV, 10 at IV, halving for "
+     "each voltage up. The highest "
      "recipe voltage is the rotor tier + 2.", 3, ['eater']),
 ]
 
